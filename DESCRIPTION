@@ -3,8 +3,8 @@ Type: Package
 Title: Plotting Shiny Interface for seedhealth function
 Version: 0.0.0.9000
 Author: c(
-    person("Yanru", "Xing", email = "yanruxing@ufl.edu", role = c("aut", "cre")),
-    person("Yanru", "Xing", email = "yanruxing@ufl.edu", role = c("aut", "cre")))
+    person("Yanru", "Xing", email = "yanruxing@ufl.edu", role = c("aut", "ctb")),
+    person("Yanru", "Xing", email = "yanruxing@ufl.edu", role = c("aut", "ctb")))
 Maintainer: The package maintainer <yanruxing@ufl.edu>
 Description: Plotting a Shiny interface for seasons seed replacement. It is a App 
     to estimate how often seed should be replaced giving specific scenario. 
