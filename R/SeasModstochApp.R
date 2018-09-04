@@ -74,7 +74,7 @@
 SeasModstochApp <- function(pHSinit=0.8, Kx = 100, betax=0.02, wxtnormm=0.8, wxtnormsd=0.3, hx=1, mxtnormm=1, 
                             mxtnormsd=0.1, axtnormm=1, axtnormsd=0.1, rx=0.1, zxtnormm=1, zxtnormsd= 0.1, gx=4, 
                             cx=0.9, phix=0, nseasons=10, HPcut=0.5, pHScut=0.5, maY=100, miY=0, thetax=0.2,  Ex=0) {
-  require(shiny)
+  require(shiny) #devtools::use_package("shiny") #require(shiny)
   shinyApp(
 
   # ui ------------------------------------------------- 
