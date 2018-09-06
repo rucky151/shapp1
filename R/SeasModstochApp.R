@@ -75,6 +75,7 @@ SeasModstochApp <- function(pHSinit=0.8, Kx = 100, betax=0.02, wxtnormm=0.8, wxt
                             mxtnormsd=0.1, axtnormm=1, axtnormsd=0.1, rx=0.1, zxtnormm=1, zxtnormsd= 0.1, gx=4, 
                             cx=0.9, phix=0, nseasons=10, HPcut=0.5, pHScut=0.5, maY=100, miY=0, thetax=0.2,  Ex=0) {
   require(shiny) #devtools::use_package("shiny") #require(shiny)
+  require(shinyalert)
   shinyApp(
 
   # ui ------------------------------------------------- 
@@ -175,6 +176,8 @@ SeasModstochApp <- function(pHSinit=0.8, Kx = 100, betax=0.02, wxtnormm=0.8, wxt
                              zxtnormm=1, zxtnormsd= 0.1, gx=4, cx=0.9, phix=0, nseasons=10, 
                              HPcut=0.5, pHScut=0.5, maY=100, miY=0, thetax=0.2,  Ex=0) {
       
+      #if(pHSinit>1 | pHSinit<0){message("Values should be between 0 and 1!")}
+      
       outm <- as.data.frame(matrix(data=-999, nrow=(nseasons+1), ncol=14, 
                                    dimnames = list(1:(nseasons+1),
                                                    c('season','HP', 'DP','HS','DS','pHS','pDS','mx','zx','ax','wx', 'Yld','YL','DPbr')))
@@ -266,6 +269,13 @@ SeasModstochApp <- function(pHSinit=0.8, Kx = 100, betax=0.02, wxtnormm=0.8, wxt
       Certified_Seed_Usage<-input$group1Par12
       Rate_of_Yield_Decline<-input$group1Par13
       
+      #validate(
+      #  need( input$group1Par1 > 1, "Please input value between 0 and 1"),
+      #  need( input$group1Par1 > 1, "Please input value between 0 and 1")
+      #)
+      
+      
+      
       df<-as.data.frame(cbind(
         Initial_Proportion_of_Healthy_Seed<-input$group1Par1,
         External_Inoculum_around_Farm<-input$group1Par2,
@@ -310,7 +320,10 @@ SeasModstochApp <- function(pHSinit=0.8, Kx = 100, betax=0.02, wxtnormm=0.8, wxt
                            hx=input$group1Par5,mxtnormm=input$group1Par6,axtnormm=input$group1Par7,gx=input$group1Par8,zxtnormm=input$group1Par9,
                            cx=input$group1Par10,rx=input$group1Par11,phix=input$group1Par12,thetax=input$group1Par13,
                            wxtnormsd= 0.1,mxtnormsd=0.1,axtnormsd=0.1,zxtnormsd= 0.1,nseasons=10,HPcut=0.5, pHScut=0.5, maY=100,miY=0 )
-      
+      if(input$group1Par1 >1 | input$group1Par1 <0){
+        message("ecrros fsfe")
+        head(figure1())
+      }else{message(NULL)}
       
       int1 <- out1$outm$YL
       seas1 <- out1$outm$season
@@ -339,4 +352,9 @@ SeasModstochApp <- function(pHSinit=0.8, Kx = 100, betax=0.02, wxtnormm=0.8, wxt
 )
 
 }
-#SeasModstochApp()
+SeasModstochApp()
+
+
+
+
+
