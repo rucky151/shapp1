@@ -320,10 +320,7 @@ SeasModstochApp <- function(pHSinit=0.8, Kx = 100, betax=0.02, wxtnormm=0.8, wxt
                            hx=input$group1Par5,mxtnormm=input$group1Par6,axtnormm=input$group1Par7,gx=input$group1Par8,zxtnormm=input$group1Par9,
                            cx=input$group1Par10,rx=input$group1Par11,phix=input$group1Par12,thetax=input$group1Par13,
                            wxtnormsd= 0.1,mxtnormsd=0.1,axtnormsd=0.1,zxtnormsd= 0.1,nseasons=10,HPcut=0.5, pHScut=0.5, maY=100,miY=0 )
-      if(input$group1Par1 >1 | input$group1Par1 <0){
-        message("ecrros fsfe")
-        head(figure1())
-      }else{message(NULL)}
+
       
       int1 <- out1$outm$YL
       seas1 <- out1$outm$season
