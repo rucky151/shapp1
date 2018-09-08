@@ -247,7 +247,36 @@ SeasModstochApp <- function(pHSinit=0.8, Kx = 100, betax=0.02, wxtnormm=0.8, wxt
       
       outfin <- cbind(outfin,ptemp)
       
-      list(outm=outm,outfin=outfin)
+      if ( pHSinit < 0 | pHSinit > 1){
+        warning('pHSinit is not between 0 and 1')
+      } else if (betax < 0.001 | betax > 0.2) {
+        warning('betax is not between 0.001 and 0.2')
+      } else if (wxtnormm < 0 | wxtnormm > 1) {
+        warning('wxtnormm is not between 0 and 1')
+      } else if (hx < 0 | hx > 1) {
+        warning('hx is not between 0 and 1')
+      } else if (mxtnormm < 0 | mxtnormm > 1) {
+        warning('mxtnormm is not between 0 and 1')
+      } else if (axtnormm < 0 | axtnormm > 1) {
+        warning('axtnormm is not between 0 and 1')
+      } else if (rx < 0 | rx > 1) {
+        warning('rx is not between 0 and 1')
+      } else if (zxtnormm < 0 | zxtnormm > 1) {
+        warning('zxtnormm is not between 0 and 1')
+      } else if (gx < 0 | gx > 20) {
+        warning('gx is not between 0 and 20')
+      } else if (cx < 0 | cx > 1) {
+        warning('cx is not between 0 and 1')
+      } else if (phix < 0 | phix > 1) {
+        warning('phix is not between 0 and 1')
+      } else if (thetax < -1 | thetax > 0.55) {
+        warning('thetax is not between -1 and 0.55')
+      } else if (Ex < 0 | Ex > 50) {
+        warning('Ex is not between 0 and 50')
+      }else {
+        list(outm=outm,outfin=outfin)
+      }
+
     }
     #&&&&&&&&&&&&&&&&&&&&&&&&  
     
@@ -320,7 +349,9 @@ SeasModstochApp <- function(pHSinit=0.8, Kx = 100, betax=0.02, wxtnormm=0.8, wxt
                            hx=input$group1Par5,mxtnormm=input$group1Par6,axtnormm=input$group1Par7,gx=input$group1Par8,zxtnormm=input$group1Par9,
                            cx=input$group1Par10,rx=input$group1Par11,phix=input$group1Par12,thetax=input$group1Par13,
                            wxtnormsd= 0.1,mxtnormsd=0.1,axtnormsd=0.1,zxtnormsd= 0.1,nseasons=10,HPcut=0.5, pHScut=0.5, maY=100,miY=0 )
-
+if(input$group1Par1 > 1){
+  ValueAlert = "Warning: Input value should between 0 and 1"
+}else{ValueAlert = NULL}
       
       int1 <- out1$outm$YL
       seas1 <- out1$outm$season
@@ -334,7 +365,8 @@ SeasModstochApp <- function(pHSinit=0.8, Kx = 100, betax=0.02, wxtnormm=0.8, wxt
       }
       smoothScatter(seas1,int1, xlab='Number of seasons', ylab='Yield loss (%)',ylim=c(0,100), font.lab=2, cex.lab=1.4, 
                     cex.axis=1.25, nrpoints=0, colramp=colorRampPalette(brewer.pal(8,"Greys")),
-                    main="",cex.main=1.6)
+                    main="",cex.main=2)
+      text(5,5, ValueAlert, col = "red", cex = 3)
       lines(colMeans(seas1), colMeans(int1), type='l', col='red')
     })
     
