@@ -1,15 +1,15 @@
-Package: shapp
+Package: shapp1
 Type: Package
-Title: Plotting Shiny Interface for seedhealth function
-Version: 0.0.0.9000
-Author: c(
-    person("Yanru", "Xing", email = "yanruxing@ufl.edu", role = c("aut", "ctb")),
-    person("Yanru", "Xing", email = "yanruxing@ufl.edu", role = c("aut", "ctb")))
-Maintainer: The package maintainer <yanruxing@ufl.edu>
-Description: Plotting a Shiny interface for seasons seed replacement. It is a App 
-    to estimate how often seed should be replaced giving specific scenario. 
+Title: Scenario Analysis for Seed Health
+Version: 0.1.0
+Author: Garrett Lab
+Maintainer: GarrettLab <GarrettLab@somewhere.net>
+Description: Based on code from Thomas-Sharma et al 2017 (one paragraph).
 License: What license is it under?
+Imports: stats, shiny, KernSmooth, RColorBrewer, tibble, dplyr,
+        ggplot2, magrittr
 Encoding: UTF-8
-LazyData: true
+LazyData: TRUE
 RoxygenNote: 6.1.0
-Imports: shiny
+NeedsCompilation: no
+Packaged: 2018-09-26 18:17:45 UTC; yanruxing
