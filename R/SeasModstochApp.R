@@ -1,4 +1,5 @@
 
+
 #' Generate an interactive Shiny interface for one simulation
 #'
 #' This function simulates one parameter combination across nseasons once
@@ -313,12 +314,7 @@ SeasModstochApp <- function(pHSinit=0.8, Kx = 100, betax=0.02, wxtnormm=0.8, wxt
           Yield_Loss <- c(Yield_Loss,out1$outm$YL[-1])
           Season <- c(Season,out1$outm$season[-1])
         }
-        #---------------------------------------------
-        #        smoothScatter(seas1,int1, xlab='Number of seasons', ylab='Yield loss (%)',ylim=c(0,100), font.lab=2, cex.lab=1.4,
-        #                      cex.axis=1.25, nrpoints=0, colramp=colorRampPalette(brewer.pal(8,"Greys")),
-        #                      main="",cex.main=1.6)
-        #        lines(colMeans(seas1), colMeans(int1), type='l', col='red')
-        #---------------------------------------------
+        #----------
         data <- as.data.frame(cbind(Yield_Loss,Season))
         data=data %>%
           mutate(SimulateCol = rep(1:(nrow(data)/10), each=10))
