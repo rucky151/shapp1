@@ -1,7 +1,7 @@
 Package: shapp1
 Type: Package
 Title: Scenario Analysis for Seed Health
-Version: 0.1.0
+Version: 0.1.1
 Author: Garrett Lab
 Maintainer: GarrettLab <GarrettLab@somewhere.net>
 Description: Based on code from Thomas-Sharma et al 2017 (one paragraph).
