@@ -16,10 +16,9 @@
 #'
 
 
-# to do - GENERAL TESTING
-# to do - check whether parameter list is correct
 
-# Columns of output matrix
+
+
 # Columns of output matrix
 # col 1 - fHP healthy plant number
 # col 2 - fDP diseased plant number (after roguing)

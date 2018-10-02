@@ -60,7 +60,7 @@
 # Columns of output of outfin
 # col 15 - HPtrans Season in which HP first transitions below HPcut*Kx, if HPtrans is NA i.e., HP never less than HPcut, set to max seasons tested
 # col 16 - pHStrans Season in which pHS first transitions below pHScut, if pHStrans is NA i.e., pHS never less than pHScut, set to max seasons tested
-# col 17 - HPpseas Healthy plants are calculated from season 1 onwards8************
+# col 17 - HPpseas Healthy plants are calculated from season 1 onwards
 # col 18 - pHSpseas Proportion seasons with pHS below pHScut
 
 # Step 1B. Create matrix for output from one simulation (stochastic model)
