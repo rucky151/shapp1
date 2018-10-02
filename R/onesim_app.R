@@ -83,13 +83,13 @@ onesim_app <- function(pHSinit=0.8, Kx = 100, betax=0.02, wxtnormm=0.8, wxtnorms
 
                    #-------------------------------
                    numericInput("group1Par1","Initial proportion of healthy seed (1=only healthy seed used, 0=only infected seed used)",min=0,max=1,value = 0.8, step = 0.1),
-                   numericInput("group1Par2","External inoculum around farm (50=high level of external inoculum, 0=absence of external inoculum)",min=0,max=50,value = 0, step = 5),
-                   numericInput("group1Par3","Maximum seasonal transmission rate (Maximum rate of disease transmission during the growing season when there are no limitations for disease to spread)",min=0.001,max=0.2,value = 0.02, step = 0.005),
-                   numericInput("group1Par4","Weather conduciveness for disease (1=highly disease conducive weather, 0=weather completely restricts disease spread)",min=0,max=1,value = 0.8, step = 0.1),
+                   numericInput("group1Par2","External inoculum around farm (50=high level of external inoculum, 0=absence of external inoculum)",min=0,max=50,value = 0, step = 1),
+                   numericInput("group1Par3","Maximum seasonal transmission rate (Maximum rate of disease transmission during the growing season when there are no limitations for disease to spread)",min=0.001,max=0.2,value = 0.02, step = 0.001),
+                   numericInput("group1Par4","Weather conduciveness for disease (1=highly disease conducive weather, 0=weather completely restricts disease spread)",min=0,max=1,value = 0.8, step = 0.01),
                    #-------------------------------
-                   numericInput("group1Par5","Host susceptibility (1='completely' susceptible, 0=immune)",min=0,max=1,value = 1, step = 0.1),
-                   numericInput("group1Par6","Vector/weed management conducted (1= no management of vectors/weeds, 0=vector/weed eradication)",min=0,max=1,value = 1, step = 0.1),
-                   numericInput("group1Par7","Roguing conducted during season (1=no symptomatic plants removed, 0=all symptomatic plants removed)",min=0,max=1,value = 1, step = 0.1),
+                   numericInput("group1Par5","Host susceptibility (1='completely' susceptible, 0=immune)",min=0,max=1,value = 1, step = 0.01),
+                   numericInput("group1Par6","Vector/weed management conducted (1= no management of vectors/weeds, 0=vector/weed eradication)",min=0,max=1,value = 1, step = 0.01),
+                   numericInput("group1Par7","Roguing conducted during season (1=no symptomatic plants removed, 0=all symptomatic plants removed)",min=0,max=1,value = 1, step = 0.01),
 
 
                    numericInput("group1Par8","Seed production rate in healthy plants (Number of seed produced per healthy plant)",min=0,max=20,value = 4, step = 1),
@@ -99,7 +99,7 @@ onesim_app <- function(pHSinit=0.8, Kx = 100, betax=0.02, wxtnormm=0.8, wxtnorms
                    numericInput("group1Par11","Reversion in infected plants expressed as the proportion of disese-free seed produced by diseased plants (1=only healthy seed produced by an infected plant, 0=only infected seed produced by an infected plant)",min=0,
                                 max=1,value =0.1, step = 0.1),
                    numericInput("group1Par12","Certified seed usage (1= only certified seed used, 0=no certified seed used)",min=0,max=1,value = 0, step = 0.1),
-                   numericInput("group1Par13","Rate of yield decline (0=constant rate of yield decline (straight line); for 0 to 0.5,yield declines slowly as disease incidence increases (concave); for -1 to 0, yield declines rapidly as disease incidence increases (convex)) ",min=-1,max=0.55,value = 0.2, step = 0.1),
+                   numericInput("group1Par13","Rate of yield decline (0=constant rate of yield decline (straight line); for 0 to 0.5,yield declines slowly as disease incidence increases (concave); for -1 to 0, yield declines rapidly as disease incidence increases (convex)) ",min=-1,max=0.55,value = 0.2, step = 0.01),
                    downloadButton("downloadParameter",label = "Download values of Parameters")
 
       ),#sidebarPanel
