@@ -3,7 +3,7 @@
 #'
 #' Note that this function is different from the one in the package truncnorm.
 #'
-#' Updated 2018-08-14
+#' Updated 2018-09-28
 
 #' @param n the number of variables to be generated.
 #' @param a the lower limit of range, positive numeric or positive numeric vector.
@@ -14,12 +14,12 @@
 #' @importFrom stats median quantile rnorm var
 #' @export
 #' @examples
-#' altrtruncnorm()
+#' altruncnorm() # to be added
 
 
 
 # for generating truncated normal random variables
-altrtruncnorm <- function(n = 100, a = 0, b = 1, mean = 0, sd = 1){
+altruncnorm <- function(n = 100, a = 0, b = 1, mean = 0, sd = 1){
 
   j <- rnorm(n,mean = mean, sd = sd)
   j[j < a] <- a
