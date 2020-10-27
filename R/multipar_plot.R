@@ -9,7 +9,6 @@
 #' @param nsim vector of number of simulations
 #' @import tibble
 #' @import ggplot2
-#' @import lattice
 #' @importFrom stats median quantile rnorm var
 #' @keywords seed health
 #' @examples
